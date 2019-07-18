@@ -1,14 +1,10 @@
 <template>
-  <div class="login">
-    login
-    hello
-    hello
-  </div>
+  <div class="index">parent1222</div>
 </template>
 
 <script>
 export default {
-  name: "login"
+  name: "named"
 };
 </script>
 

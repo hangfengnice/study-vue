@@ -1,22 +1,24 @@
 import Vue from "vue";
 import Router from "vue-router";
-import route from "./router";
+import routes from "./router";
 
 Vue.use(Router);
 
 const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
-  route
+  routes
 });
 
-const has_login = false;
+
+
+const has_login = true;
 
 router.beforeEach((to, from, next) => {
   if (to.path == "/login") {
     next();
   } else {
-    has_login ? next() : next("/login");
+    has_login ? next() : next("/login"); 
   }
 });
 
