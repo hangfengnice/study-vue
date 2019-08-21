@@ -26,11 +26,15 @@ export default [
   {
     path: "/countTo",
     name: "countTo",
-    component: () => import('../views/countTo.vue')
+    component: () => import("../views/countTo.vue")
+  },
+  {
+    path: "/split-pane",
+    name: "split_pane",
+    component: () => import("../views/splitPane.vue")
   },
   {
     path: "/named_view",
-
     components: {
       default: () => import("../views/named.vue"),
       email: () => import("../views/email.vue"),
