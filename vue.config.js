@@ -9,7 +9,6 @@ module.exports = {
       .set("_c", resolve("/src/components"));
   },
   devServer: {
-    open: true,
-    proxy: 'http://localhost:3000'
+    // proxy: "http://localhost:3000"
   }
 };

@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <button @click="getInfo">点击获取</button>
+    <img :src="url" alt="">
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
+import {getUserInfo} from '../api/user'
 
 export default {
   name: 'home',
+  data() {
+    return {
+      url: ''
+    }
+  },
   components: {
-    HelloWorld
+    // HelloWorld
+  },
+  methods: {
+    getInfo() {
+      // axios.post('http://localhost:3000/getUserInfo', { userId: 21 }).then(res => {
+      //   console.log(res) 
+      // })
+      getUserInfo({userId: 21}).then(res => {
+        console.log(res)
+        this.url = res.data.img
+      })
+    }
   }
 }
 </script>
