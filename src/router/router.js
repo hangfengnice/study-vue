@@ -8,9 +8,9 @@ export default [
     component: () => import("@/views/Home.vue")
   },
   {
-    path: '/store',
-    name: 'store',
-    component: () => import('@/views/store.vue')
+    path: "/store",
+    name: "store",
+    component: () => import("@/views/store.vue")
   },
   {
     path: "/register",
@@ -24,17 +24,17 @@ export default [
     component: Login
   },
   {
+    path: "/countTo",
+    name: "countTo",
+    component: () => import('../views/countTo.vue')
+  },
+  {
     path: "/named_view",
 
-    components: 
-    {
-      default: () => import('../views/named.vue'),
-      email: () => import('../views/email.vue'),
-      telphone: () => import('../views/telphone.vue')
-
+    components: {
+      default: () => import("../views/named.vue"),
+      email: () => import("../views/email.vue"),
+      telphone: () => import("../views/telphone.vue")
     }
-  
   }
-  
-  
 ];
