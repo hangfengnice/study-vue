@@ -8,6 +8,7 @@
       <router-link to="/named_view">namedView</router-link>
       <router-link to="/menuPage">menuPage</router-link>
 
+      <router-link to="/login">Login</router-link>
     </nav>
 
     <router-view default />

@@ -12,7 +12,7 @@ router.get('/getUserInfo', function (req, res, next) {
 
 router.post('/formData', function (req, res, next) {
   console.log(req.body)
-  if (req.body.name !== 'lison') {
+  if (req.body.name !== 'hang') {
     res.status(401).send({
       name: '姓名不对'
     })

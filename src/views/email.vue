@@ -12,9 +12,6 @@ export default {
     handleClick(){
       this.$bus.$emit('onClick', 'hello')
     }
-  },
-  mounted(){
-    console.log(this.$bus)
   }
 };
 </script>
