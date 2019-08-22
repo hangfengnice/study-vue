@@ -34,6 +34,16 @@ export default [
     component: () => import("../views/splitPane.vue")
   },
   {
+    path: "/render_page",
+    name: "render_page",
+    component: () => import("../views/renderPage.vue")
+  },
+  {
+    path: "/menuPage",
+    name: "menuPage",
+    component: () => import("../views/menuPage.vue")
+  },
+  {
     path: "/named_view",
     components: {
       default: () => import("../views/named.vue"),

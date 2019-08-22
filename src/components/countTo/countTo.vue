@@ -1,6 +1,8 @@
 <template>
   <div>
-    <slot name='left'></slot><span ref='number' :class='countClass' :id='eleId'></span><slot name='right'></slot>
+    <slot name='left'></slot>
+    <span ref='number' :class='countClass' :id='eleId'></span>
+    <slot name='right'></slot>
   </div>
 </template>
 
@@ -70,7 +72,7 @@ export default {
   },
   methods: {
     getCount() {
-      return this.$refs.number.innerText
+      return this.$refs.number && this.$refs.number.innerText
     },
     emitEndEvent() {
       setTimeout(() => {

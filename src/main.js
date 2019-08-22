@@ -5,6 +5,7 @@ import store from './store'
 import Bus from './bus'
 if(process.env.NODE_ENV !== 'production') require('./mock')
 
+import CountTo from './components/countTo'
 
 Vue.prototype.$bus = Bus
 
@@ -13,5 +14,24 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
+  // render: h => {
+  //   return h(CountTo,{
+  //       "class": ['count-to'],
+  //       props: {
+  //         endVal: 100
+  //       },
+  //       on: {
+  //         'on-animation-end': val => {
+  //           console.log('animation-end')
+  //         }
+  //       },
+  //       nativeOn: {
+  //         'click': () => {
+  //           console.log('click!')
+  //         }
+  //       }
+  //     }
+  //   );
+  // }
   render: h => h(App)
 }).$mount('#app')
