@@ -1,11 +1,18 @@
 import Login from "@/views/login.vue";
+import Layout from '../views/layout.vue'
+import Home from '../views/Home.vue'
 
 export default [
   {
     path: "/",
     name: "home",
-
-    component: () => import("@/views/Home.vue")
+    component: Layout,
+    children: [
+      {
+        path: "home",
+        component: Home
+      }
+    ]
   },
   {
     path: "/store",

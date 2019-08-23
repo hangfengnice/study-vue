@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <nav id="nav">
+    <!-- <nav id="nav">
       <router-link to="/">home</router-link>
+      <router-link to="/layout">Layout</router-link>
       <router-link to="/store">store</router-link>
       <router-link to="/countTo">countTo</router-link>
       <router-link to="/render_page">renderPage</router-link>
       <router-link to="/named_view">namedView</router-link>
       <router-link to="/menuPage">menuPage</router-link>
-
       <router-link to="/login">Login</router-link>
-    </nav>
+    </nav> -->
 
     <router-view default />
     <router-view name="email" />
@@ -18,11 +18,13 @@
 </template>
 
 <style lang="scss" scoped>
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // text-align: center;
+  height: 100%;
   color: #2c3e50;
 }
 #nav {
