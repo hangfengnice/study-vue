@@ -6,8 +6,8 @@ import Bus from './bus'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
 
-// if(process.env.NODE_ENV !== 'production') require('./mock')
-import CountTo from './components/countTo'
+if(process.env.NODE_ENV !== 'production') require('./mock')
+// import CountTo from './components/countTo'
 Vue.use(iview)
 
 Vue.prototype.$bus = Bus

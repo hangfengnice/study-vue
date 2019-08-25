@@ -14,27 +14,27 @@ const router = new Router({
 
 const has_login = false;
 
-router.beforeEach((to, from, next) => {
-  // if (to.path == "/login") {
-  //   next();
-  // } else {
-  //   has_login ? next() : next("/login");
-  // }
-  const token = getToken();
-  if (token) {
-    store
-      .dispatch("authorization", token)
-      .then(res => {
-        next();
-      })
-      .catch(() => {
-        setToken("");
-        next({ name: login });
-      });
-  } else {
-    if (to.name === "login") next();
-    else next({ name: "login" });
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   // if (to.path == "/login") {
+//   //   next();
+//   // } else {
+//   //   has_login ? next() : next("/login");
+//   // }
+//   const token = getToken();
+//   if (token) {
+//     store
+//       .dispatch("authorization", token)
+//       .then(res => {
+//         next();
+//       })
+//       .catch(() => {
+//         setToken("");
+//         next({ name: login });
+//       });
+//   } else {
+//     if (to.name === "login") next();
+//     else next({ name: "login" });
+//   }
+// });
 
 export default router;
