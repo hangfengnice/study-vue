@@ -28,6 +28,9 @@ export default {
     //     }
     //   }, name)
     // }
+    ok() {
+
+    },
     renderFunc(h, name) {
       return (
         <i on-click={this.handleClick} style={{color: 'pink'}}>{name}</i>

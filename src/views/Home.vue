@@ -65,7 +65,7 @@ export default {
     }
     .blue {
       .ivu-col {
-        background-color: rgb(139, 211, 245);
+        background-color: rgb(93, 104, 109);
         background-clip: content-box;
       }
     }

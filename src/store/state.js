@@ -1,4 +1,5 @@
 const state = {
+  appName: "admin",
   authorName: "hangfeng"
 };
 

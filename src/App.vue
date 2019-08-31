@@ -10,7 +10,6 @@
       <router-link to="/menuPage">menuPage</router-link>
       <router-link to="/login">Login</router-link>
     </nav> -->
-
     <router-view default />
     <router-view name="email" />
     <router-view name="telphone" />
