@@ -22,6 +22,9 @@ export default {
       list: [1, 2, 3, 4]
     }
   },
+  created() {
+    console.log(this.$route)
+  },
   methods: {
     ...mapActions([
       "login"

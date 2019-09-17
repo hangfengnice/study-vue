@@ -34,7 +34,7 @@ export default [
   },
 
   {
-    path: "/login",
+    path: "/login/:userId",
     name: "login",
     component: Login
   },
@@ -59,6 +59,11 @@ export default [
     component: () => import("../views/menuPage.vue")
   },
   {
+    path: "/test",
+    name: "test",
+    component: () => import('../pages/test/index.vue')
+  },
+  {
     path: "/named_view",
     components: {
       default: () => import("../views/named.vue"),
@@ -66,4 +71,5 @@ export default [
       telphone: () => import("../views/telphone.vue")
     }
   }
+  
 ];

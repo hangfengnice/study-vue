@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id='app'>
+    {{a}}
+    <p>{{arr[0]}}</p>
+    <p>{{obj.a}}</p>
+    <p><button @click='handle'>click</button></p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+
+    let vm = new Vue({
+      el: "#app",
+
+      data: {
+        a: 1,
+        arr: [1,2],
+        obj: {
+          a: 1,
+          b: 2
+        }
+      },
+      methods: {
+        handle() {
+          this.arr[0] = 'hello'
+          // this.$set(this.arr, 0, 'hello')
+          this.obj.a = 'word'
+        }
+      }
+    })
+  </script>
+  
+</body>
+</html>
