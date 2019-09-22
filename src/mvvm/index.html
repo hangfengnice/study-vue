@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mvvm</title>
+</head>
+<body>
+  <div id="test">
+    <p>{{name}}</p>
+    <p v-text='name'></p>
+    <p v-text='name'></p>
+    <button v-on:click='update'>跟新</button>
+</div>
+
+<script src="./js/observer.js"></script>
+<script src="./js/watcher.js"></script>
+<script src="./js/compile.js"></script>
+<script src="./js/mvvm.js"></script>
+<script>
+  new MVVM({
+    el: '#test',
+    data: {
+      name: "hh"
+    },
+    methods: {
+      update() {
+        this.name = 'xinxin'
+      }
+    }
+    });
+    
+</script>
+  
+</body>
+</html>
