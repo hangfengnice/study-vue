@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=, initial-scale=1.0"> -->
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <button @click='boost'>触发事件</button>
+  </div>
+  <script>
+    new Vue({
+      el:'#root',
+      data() {
+        return {
+          message: 'hello vue'
+        }
+      },
+      created() {
+        this.$on(['my_events', 'my_events2'], this.handleEvents)
+        console.log(this._events)
+      },
+      methods: {
+        handleEvents(e) {
+          console.log(this.message, e)
+        },
+        handleEvents1() {
+          console.log(2)
+        },
+        boost() {
+          // console.log('hello')
+          this.$emit('my_events2', 'my params')
+        }
+      }
+    })
+  </script>
+</body>
+</html>
