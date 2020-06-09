@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <div>{{name}}</div>
+    <div>{{message}}</div>
+  </div>
+
+  <script>
+    function complier(template, data) {
+      var childNodes = template.childNodes
+
+
+      for (var i = 0; i < childNodes.length; i ++) {
+        var type = childNodes[i].nodeType
+        if (type == 3) {
+
+          let txt = childNodes[i].nodeValue
+
+         childNodes[i].nodeValue = txt.replace(/\{\{(.+?)\}\}/g, function (_, g) {
+            return data[g]
+          })
+
+        } else if (type == 1) {
+          complier(childNodes[i], data)
+        }
+      }
+    }
+    function JGVue(options) {
+      this._data = options.data
+      this._el = options.el
+      this.$el = this._templateDOM = document.querySelector(this._el)
+      this._parent = this.$el.parentNode
+      this.render()
+    }
+    JGVue.prototype.render = function () {
+      this.complier()
+    }
+    JGVue.prototype.complier = function (tmpNode) {
+      let realHTMLDOM = this._templateDOM.cloneNode(true)
+      
+      complier(realHTMLDOM, this._data)
+      this.update(realHTMLDOM)
+    }
+    JGVue.prototype.update = function (real) {
+      this._parent.replaceChild(real, document.querySelector(this._el))
+    }
+    new JGVue({
+      el: '#root',
+      data: {
+        name: 'hf',
+        message: 'hello world'
+      }
+    })
+    function getValueByPath(obj, path) {
+      let paths = path.split('.')
+      let res = obj
+      let prop
+      while(prop = paths.shift()) {
+        res = obj[prop]
+      }
+      return res
+    }
+  </script>
+   
+    
+  
+</body>
+</html>
