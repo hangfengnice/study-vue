@@ -1,18 +1,48 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <test></test>
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from "@/components/HelloWorld.vue";
+import YButton from "@/components/y-button.vue";
+import HfButton from '@/components/hf-button.vue'
+import Test from './test'
+import emitter from '@/utils/emitter.js'
 
 export default {
-  name: 'Home',
+  mixins: [emitter],
+  name: "Home",
   components: {
-    HelloWorld
+    HelloWorld,
+    YButton,
+    HfButton,
+    Test
+  },
+  data() {
+    return {
+      name: 'hf11'
+    }
+  },
+  provide() {
+    return {
+      name: this.name,
+      reactivename: () => this.name
+    }
+  },
+  methods: {
+    changeProvideName() {
+      this.name = 'hh'
+      console.log(this.name, 'change this.name')
+    }
   }
-}
+};
 </script>
+<style scoped>
+.blue {
+  color: blue;
+}
+</style>

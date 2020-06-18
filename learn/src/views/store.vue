@@ -22,6 +22,7 @@ import AInput from './Ainput'
 import AShow from './AShow'
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import { getUserInfo } from '../api/user'
+import axios from 'axios'
 // import { createNamespacedHelpers } from 'vuex'
 // const { mapState } = createNamespacedHelpers('user')
 
@@ -30,6 +31,9 @@ export default {
     return {
       inputValue: ''
     }
+  },
+  mounted() {
+    console.log(axios)
   },
   computed: {
     ...mapState({
@@ -67,8 +71,11 @@ export default {
       // this.$store.commit('setappversion')
     },
     handleGetuser() {
-      getUserInfo().then(res => {
-        console.log(res)
+      // axios('/getUserInfo').then(res => {
+      //   console.log(res)
+      // })
+      getUserInfo('/api/getUserInfo').then(res => {
+        console.log(res.data)
       })
     }
   }
