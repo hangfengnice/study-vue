@@ -12,7 +12,7 @@
       <input
         v-else
         type="checkbox"
-        :value="currentValue"
+        :checked="currentValue"
         @change="change"
         :disabled="disabled"
       />
@@ -68,7 +68,7 @@ export default {
   },
   watch: {
     value(val) {
-      if (val == this.trueValue || val == this.falseValue) {
+      if (val === this.trueValue || val === this.falseValue) {
         this.updateModel()
       } else {
         throw new Error('value should be trueValue or falseValue')
@@ -82,7 +82,7 @@ export default {
       this.currentValue = checked
       const value = checked ? this.trueValue : this.falseValue
       this.$emit('input', value)
-      if(this.group) {
+      if (this.group) {
         this.parent.change(this.model)
       } else {
         this.$emit('on-change', value)
@@ -90,7 +90,7 @@ export default {
       }
     },
     updateModel() {
-      this.currentValue = this.value == this.trueValue
+      this.currentValue = this.value === this.trueValue
     }
   }
 }

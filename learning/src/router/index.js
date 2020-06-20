@@ -22,6 +22,41 @@ const routes = [
     path: '/form',
     name: 'form',
     component: () => import('../views/form.vue')
+  },
+  {
+    path: '/display',
+    name: 'display',
+    component: () => import('../views/display.vue')
+  },
+  {
+    path: '/alert',
+    name: 'alert',
+    component: () => import('../views/alert.vue')
+  },
+  {
+    path: '/table-render',
+    name: 'table-render',
+    component: () => import('../views/table-render.vue')
+  },
+  {
+    path: '/table-slot',
+    name: 'table-slot',
+    component: () => import('../views/table-slot.vue')
+  },
+  {
+    path: '/table-slot-render',
+    name: 'table-slot-render',
+    component: () => import('../views/table-slot-render.vue')
+  },
+  {
+    path: '/table-render-third',
+    name: 'table-render-third',
+    component: () => import('../views/table-render-third.vue')
+  },
+  {
+    path: '/tree',
+    name: 'tree',
+    component: () => import('../views/tree.vue')
   }
 ]
 

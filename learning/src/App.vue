@@ -2,8 +2,15 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-      <router-link to="/form">form</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/form">form</router-link> |
+      <router-link to="/display">display</router-link> |
+      <router-link to="/alert">alert</router-link> |
+      <router-link to="/table-render">table-render</router-link> |
+      <router-link to="/table-slot">table-slot</router-link> |
+      <router-link to="/table-slot-render">table-slot-render</router-link> |
+      <router-link to="/table-render-third">table-render-third</router-link> |
+      <router-link to="/tree">tree</router-link> |
     </div>
     <router-view/>
   </div>
