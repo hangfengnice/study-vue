@@ -1,10 +1,18 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <model></model>
   </div>
-  <router-view/>
 </template>
+<script lang="ts">
+import Model from './components/model.vue'
+
+export default {
+  name: 'app',
+  components: {
+    Model,
+  },
+}
+</script>
 
 <style lang="scss">
 #app {
