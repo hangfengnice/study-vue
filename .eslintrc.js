@@ -32,6 +32,9 @@ module.exports = {
     'no-param-reassign': 'off',
     'prefer-destructuring': 'off',
     'no-new-func': 'off',
-    'guard-for-in': 'off'
+    'guard-for-in': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    'no-shadow': 'off'
   },
 };
