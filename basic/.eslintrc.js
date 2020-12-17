@@ -4,12 +4,11 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:vue/vue3-essential',
+    'plugin:vue/essential',
     '@vue/airbnb',
-    '@vue/typescript/recommended',
   ],
   parserOptions: {
-    ecmaVersion: 2020,
+    parser: 'babel-eslint',
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -34,7 +33,6 @@ module.exports = {
     'no-new-func': 'off',
     'guard-for-in': 'off',
     'import/no-extraneous-dependencies': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
     'no-shadow': 'off'
   },
 };
