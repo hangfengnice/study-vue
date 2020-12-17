@@ -11,13 +11,13 @@ export default {
   name: 'Home',
   data() {
     return {
-      name: 'hf'
+      name: 'hf',
     }
   },
   methods: {
     handleEnter(event) {
       console.log('enter', event)
-    }
-  }
+    },
+  },
 }
 </script>
